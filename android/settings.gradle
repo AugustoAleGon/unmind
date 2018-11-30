@@ -1,0 +1,3 @@
+rootProject.name = 'unmind'
+
+include ':app'
