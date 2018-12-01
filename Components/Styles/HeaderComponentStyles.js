@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native'
-import { Colors } from '../../Themes'
+import { Colors, ApplicationStyles } from '../../Themes'
 
 export default StyleSheet.create({
   headerContainer: {
@@ -16,7 +16,8 @@ export default StyleSheet.create({
     backgroundColor: Colors.white,
     height: 45,
     width: 45,
-    borderRadius: 45
+    borderRadius: 45,
+    ...ApplicationStyles.screen.center
   },
   centerSection: {
     flex: 1,

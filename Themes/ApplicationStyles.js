@@ -3,6 +3,9 @@ const ApplicationStyles = {
     center: {
       justifyContent: 'center',
       alignItems: 'center'
+    },
+    fillScreen: {
+      flex: 1
     }
   }
 }

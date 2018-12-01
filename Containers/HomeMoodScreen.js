@@ -1,12 +1,16 @@
 import React, { Component } from 'react'
 import {
-  View
+  View,
+  Text
 } from 'react-native'
 import HeaderComponent from '../Components/HeaderComponent'
 
 import styles from './Styles/HomeMoodScreenStyles'
 
 class HomeMoodScreen extends Component {
+  state = {
+    positionSlider: 4
+  }
   render () {
     return (
       <View style={{ flex: 1 }}>
@@ -14,6 +18,9 @@ class HomeMoodScreen extends Component {
           headerStyle={styles.header}
           title='Check-In'
           subtitle='How are you feeling?' />
+        <View style={styles.imageWrapper}>
+          <Text>{this.state.positionSlider}</Text>
+        </View>
       </View>
     )
   }
