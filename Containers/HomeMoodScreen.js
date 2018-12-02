@@ -1,25 +1,55 @@
 import React, { Component } from 'react'
 import {
-  View,
-  Text
+  Image,
+  TouchableOpacity,
+  Slider,
+  View
 } from 'react-native'
 import HeaderComponent from '../Components/HeaderComponent'
+import { selectImageSmile, selectBackgroundColor } from '../Utils/Utils'
 
+import { ApplicationStyles } from '../Themes'
 import styles from './Styles/HomeMoodScreenStyles'
+import { Button } from 'react-native-elements';
 
 class HomeMoodScreen extends Component {
   state = {
     positionSlider: 4
   }
+
+  changePosition = (value) => {
+    this.setState({
+      positionSlider: value
+    })
+  }
+
   render () {
     return (
-      <View style={{ flex: 1 }}>
+      <View style={[ApplicationStyles.screen.fillScreen, styles.mainContainer]}>
         <HeaderComponent
-          headerStyle={styles.header}
+          headerStyle={{ backgroundColor: selectBackgroundColor(this.state.positionSlider) }}
           title='Check-In'
           subtitle='How are you feeling?' />
         <View style={styles.imageWrapper}>
-          <Text>{this.state.positionSlider}</Text>
+          <Image style={styles.imageStyle} source={selectImageSmile(this.state.positionSlider)} />
+        </View>
+        <View style={styles.sliderWrapper}>
+          <View style={styles.sliderContainer}>
+            <Slider
+              maximumValue={7}
+              minimumValue={1}
+              step={1}
+              value={this.state.positionSlider}
+              onValueChange={this.changePosition} />
+          </View>
+        </View>
+        <View style={styles.buttonWrapper}>
+          <Button
+            buttonStyle={styles.buttonStyles}
+            Component={TouchableOpacity}
+            containerStyle={styles.buttonContainer}
+            titleStyle={styles.buttonText}
+            title='Next' />
         </View>
       </View>
     )

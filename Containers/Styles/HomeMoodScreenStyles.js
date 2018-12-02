@@ -1,13 +1,41 @@
 import { StyleSheet } from 'react-native'
-import { Colors } from '../../Themes'
+import { Colors, Metrics } from '../../Themes'
 
 export default StyleSheet.create({
-  header: {
-    backgroundColor: Colors.orangeSmile
+  mainContainer: {
+    backgroundColor: Colors.backgroundColorLightGrey
+  },
+  imageStyle: {
+    width: 300,
+    height: 300
   },
   imageWrapper: {
     width: '100%',
     justifyContent: 'center',
+    alignItems: 'center',
+    height: Metrics.screenHeight / 2
+  },
+  sliderWrapper: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingTop: 10
+  },
+  sliderContainer: {
+    width: Metrics.screenWidth / 2
+  },
+  buttonWrapper: {
+    paddingTop: 20,
+    justifyContent: 'center',
     alignItems: 'center'
+  },
+  buttonContainer: {
+    width: Metrics.screenWidth / 2,
+    height: 50
+  },
+  buttonStyles: {
+    backgroundColor: Colors.white
+  },
+  buttonText: {
+    color: Colors.greyText
   }
 })
