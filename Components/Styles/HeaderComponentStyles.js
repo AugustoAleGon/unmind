@@ -32,6 +32,7 @@ export default StyleSheet.create({
   subtitleStyle: {
     paddingTop: 10,
     fontSize: 14,
-    color: Colors.white
+    color: Colors.white,
+    textAlign: 'center'
   }
 })

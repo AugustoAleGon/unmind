@@ -10,7 +10,7 @@ import { selectImageSmile, selectBackgroundColor } from '../Utils/Utils'
 
 import { ApplicationStyles } from '../Themes'
 import styles from './Styles/HomeMoodScreenStyles'
-import { Button } from 'react-native-elements';
+import { Button } from 'react-native-elements'
 
 class HomeMoodScreen extends Component {
   state = {
@@ -49,6 +49,9 @@ class HomeMoodScreen extends Component {
             Component={TouchableOpacity}
             containerStyle={styles.buttonContainer}
             titleStyle={styles.buttonText}
+            onPress={() => {
+              this.props.navigation.navigate('FeelingsRate')
+            }}
             title='Next' />
         </View>
       </View>

@@ -8,7 +8,8 @@ const Colors = {
   blueNoSmile: '#6AA1D6',
   orangeSmile: '#F5BC41',
   backgroundColorLightGrey: '#EAEAEA',
-  greyText: 'grey'
+  greyText: 'grey',
+  greenHeaderFeeling: '#9EBA42'
 }
 
 export default Colors

@@ -1,3 +1,5 @@
+import { Platform } from 'react-native'
+
 const ApplicationStyles = {
   screen: {
     center: {
@@ -6,6 +8,9 @@ const ApplicationStyles = {
     },
     fillScreen: {
       flex: 1
+    },
+    paddingTopIOS: {
+      paddingTop: Platform.OS === 'ios' ? 20 : 0
     }
   }
 }
