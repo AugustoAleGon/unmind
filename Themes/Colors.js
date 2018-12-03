@@ -9,7 +9,9 @@ const Colors = {
   orangeSmile: '#F5BC41',
   backgroundColorLightGrey: '#EAEAEA',
   greyText: 'grey',
-  greenHeaderFeeling: '#9EBA42'
+  greenHeaderFeeling: '#9EBA42',
+  selectedButton: '#F1F0F2',
+  transparent: 'transparent'
 }
 
 export default Colors

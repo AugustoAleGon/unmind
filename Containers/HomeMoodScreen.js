@@ -45,10 +45,10 @@ class HomeMoodScreen extends Component {
         </View>
         <View style={styles.buttonWrapper}>
           <Button
-            buttonStyle={styles.buttonStyles}
+            buttonStyle={ApplicationStyles.button.backgroundStyle}
             Component={TouchableOpacity}
             containerStyle={styles.buttonContainer}
-            titleStyle={styles.buttonText}
+            titleStyle={ApplicationStyles.button.titleText}
             onPress={() => {
               this.props.navigation.navigate('FeelingsRate')
             }}

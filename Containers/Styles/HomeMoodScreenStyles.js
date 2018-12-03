@@ -31,11 +31,5 @@ export default StyleSheet.create({
   buttonContainer: {
     width: Metrics.screenWidth / 2,
     height: 50
-  },
-  buttonStyles: {
-    backgroundColor: Colors.white
-  },
-  buttonText: {
-    color: Colors.greyText
   }
 })

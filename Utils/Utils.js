@@ -41,3 +41,11 @@ export const selectBackgroundColor = (value) => {
       break
   }
 }
+
+export const givenIdReturnFeeling = (idArray, feelingArray) => {
+  let result = []
+  for (let i = 0; i < idArray.length; i++) {
+    result.push(feelingArray[idArray[i]])
+  }
+  return result
+}
