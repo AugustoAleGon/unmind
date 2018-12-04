@@ -1,15 +1,18 @@
 import React, { Component } from 'react'
 import {
   View,
-  Text
+  Text,
+  FlatList
 } from 'react-native'
 import HeaderComponent from '../Components/HeaderComponent'
 import MoodBox from '../Components/MoodBox'
 import { dateToMonth, dateToDay, dateToHour } from '../Utils/Utils'
+import moodsAction from '../Redux/Reducers/mood'
+import { bindActionCreators } from 'redux'
+import { connect } from 'react-redux'
 
 import { ApplicationStyles } from '../Themes'
 import styles from './Styles/StatisticsScreenStyles'
-import { FlatList } from 'react-native-gesture-handler'
 
 const data = [
   {
@@ -47,6 +50,17 @@ const data = [
 ]
 
 class StatisticsScreen extends Component {
+  async componentDidMount () {
+    await this.props.getMoods()
+    console.log('This props:', this.props)
+  }
+
+  componentDidUpdate (prevProps) {
+    if (prevProps.moods !== this.props.moods) {
+      console.log(this.props.moods)
+    }
+  }
+
   _renderItem = ({ item }) => {
     return (
       <MoodBox
@@ -81,4 +95,14 @@ class StatisticsScreen extends Component {
   }
 }
 
-export default StatisticsScreen
+const mapStateToProps = (state) => {
+  return {
+    moods: state.mooods
+  }
+}
+
+const mapDispatchToPros = (dispatch) => {
+  return { getMoods: bindActionCreators(moodsAction.getMoods, dispatch) }
+}
+
+export default connect(mapStateToProps, mapDispatchToPros)(StatisticsScreen)
