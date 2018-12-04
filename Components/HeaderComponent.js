@@ -35,6 +35,10 @@ const HeaderComponent = (props) => {
           </TouchableOpacity>
         </View>
       }
+      {
+        props.centerSection &&
+        <View style={styles.borderSection} />
+      }
     </View>
   )
 }

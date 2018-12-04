@@ -16,6 +16,7 @@ class DescriptionScreen extends Component {
       <View style={[ApplicationStyles.screen.fillScreen, styles.mainContainer]}>
         <HeaderComponent
           showLeftIcon
+          centerSection
           backIconOnPress={() => this.props.navigation.goBack()}
           headerStyle={ApplicationStyles.header.background}
           title='Comment?'
